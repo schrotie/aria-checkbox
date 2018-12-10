@@ -1,6 +1,8 @@
 # aria-checkbox
 Accessible, responsive, themeable, small footprint checkbox, supports tri-state, too
 
+[Demonstration](https://codepen.io/schrotie/pen/MZYeQR?editors=1101)
+
 `<aria-checkbox>` is a themable checkbox web-component/custom-element. Simply load the script, e.g. in your document's `<head>` and add checkboxes to your document.
 
 Okay, it's probably not _that_ simple. `AriaCheckbox` is a class that handles the _ARIA_ (i.e. accessibility) aspect of checkboxes. `<aria-checkbox>` comes with a couple of themes:
