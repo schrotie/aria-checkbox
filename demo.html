@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="module" src="dev/client/watchdog.mjs"></script>
+		<!--
+		<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+		<script src="dist/aria-checkboxToggle.IE.min.js"></script>
+		-->
+		<script type="module" src="src/aria-checkboxDemo.mjs"></script>
+		<style>
+			aria-checkbox, label {
+				margin: 1em;
+				display: block;
+			}
+			#classicVars {
+				--aria-checkbox-bg-unchecked: #d4f1d1;
+				--aria-checkbox-bg-checked: #00ff00;
+				--aria-checkbox-fg-checked: #ff0000;
+			}
+			#materialVars {
+				--aria-checkbox-bg-unchecked: #ffc793;
+				--aria-checkbox-bg-checked: #ff7b00;
+				--aria-checkbox-fg-checked: #fffc00;
+			}
+			#custom {
+				--aria-checkbox-bg-checked: #ff9a9a;
+			}
+			#custom::before {
+				border-radius: 50% !important;
+				font-size: 1.2em;
+			}
+			#custom[aria-checked="true"]::after {
+				content: '✓';
+				border: none;
+				transform: translateX(-120%) translateY(-80%);
+				color: #ca0000;
+				font-size: 1.5em;
+			}
+			#image {
+				cursor: pointer;
+				outline: none;
+			}
+			#image:focus::before       {border-bottom: 1px solid #ff7b00;}
+			#image:hover::before       {border-bottom: 1px solid #ff7b00;}
+			#image:hover:focus::before {border-bottom: 2px solid #ff7b00;}
+			#image::before {
+				content: url(https://openclipart.org/image/24px/svg_to_png/214030/Thumbs-Down-Circle.png);
+				vertical-align: sub;
+				margin-right: .5em;
+				display: inline-block;
+			}
+			#image[aria-checked="true"]::before {
+				content: url(https://openclipart.org/image/24px/svg_to_png/214028/Thumbs-Up-Circle.png);
+			}
+		</style>
+	</head>
+	<body>
+		<aria-checkbox
+			aria-controls="classic classicVars material materialVars toggle custom image"
+		>All</aria-checkbox>
+		<aria-checkbox id="classic"                           >classic</aria-checkbox>
+		<aria-checkbox id="classicVars"                       >CSS vars</aria-checkbox>
+		<aria-checkbox id="material"     data-theme="material">material</aria-checkbox>
+		<aria-checkbox id="materialVars" data-theme="material">material CSS vars</aria-checkbox>
+		<aria-checkbox id="toggle"       data-theme="toggle"  >toggle</aria-checkbox>
+		<aria-checkbox id="custom"       data-theme="material">custom</aria-checkbox>
+		<aria-checkbox id="image"        data-theme="custom"  >image</aria-checkbox>
+		<p>
+			Native checkbox for comparison, not coupled to above:
+			<label for="native"><input type="checkbox" id="native"/>Native</label>
+		</p>
+		<fieldset>
+			<form>
+				<legend>Form Test</legend>
+				<p>&lt;aria-checkbox&gt; maintains an invisible &lt;input type="checkbox"&gt; in sync. Thus you can drop it into any form where it behaves like a built in checkbox. In this example the form submit will reload this demo and display the value in the URL query.
+				<aria-checkbox data-theme="material" name="foo" value="bar">form value</aria-checkbox>
+				<input type="submit"/>
+			</form>
+		</fieldset>
+	</body>
+</html>
