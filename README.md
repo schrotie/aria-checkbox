@@ -79,5 +79,9 @@ When the checkox's value changes due to the user's mouse or keyboard interaction
 
 This is what native checkboxes do. The original user event will be in event.detail.
 
+## Method
+
+* __toggle__ ... guess :-)
+
 # Accessibility features
 See [W3C example](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html).
