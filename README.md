@@ -77,6 +77,15 @@ When the checkox's value changes due to the user's mouse or keyboard interaction
 * __change__
 * __input__
 
+## CSS custom properties
+These are specific to the theme you use for the box. The shipped themes support the following:
+* __--aria-checkbox-bg-unchecked__ default: #a8a8a8  
+background color of unchecked box
+* __--aria-checkbox-bg-checked__ default: #4787ef  
+background color of checked box
+* __--aria-checkbox-fg-checked__ default: #fff  
+foreground color of checked box (i.e. checkmark color, not used by toggle)
+
 This is what native checkboxes do. The original user event will be in event.detail.
 
 ## Method
